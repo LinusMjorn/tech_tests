@@ -22,5 +22,12 @@ describe("Bank", function() {
 
     }); 
 
+    it("Adds the an add transaction to statement when add is called", function() {
+        bank = new Bank 
+        bank.add(1000)
+        expect( bank.statement ).toContain(1000)
+
+    }); 
+
 
 });

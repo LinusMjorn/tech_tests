@@ -7,6 +7,7 @@ class Bank {
     
      add(number) {
          this.balance = this.balance + number;
+         this.statement.push(number)
         return this.balance;
       }
 
