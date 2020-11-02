@@ -10,5 +10,11 @@ describe("Bank", function() {
         expect( bank.balance ).toEqual(1000);
     }); 
 
+    it("Returns the balance when 500 has been withdrawn from balance", function() {
+        bank = new Bank 
+        bank.withdraw(500)
+        expect( bank.balance ).toEqual(-500);
+    }); 
+
 
 });

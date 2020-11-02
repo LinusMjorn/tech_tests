@@ -5,6 +5,12 @@ class Bank {
     
      add(number) {
          this.balance = this.balance + number;
-        return ;
+        return this.balance;
+      }
+
+     withdraw(number){
+         this.balance = this.balance - number;
+         return this.balance;
+
       }
 }
