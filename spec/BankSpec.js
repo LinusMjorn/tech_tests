@@ -16,5 +16,11 @@ describe("Bank", function() {
         expect( bank.balance ).toEqual(-500);
     }); 
 
+    it("Bank is initialized with bank statement headers", function() {
+        bank = new Bank 
+        expect( bank.statement ).toContain("date || credit || debit || balance")
+
+    }); 
+
 
 });

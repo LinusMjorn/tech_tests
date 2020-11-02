@@ -1,6 +1,8 @@
 class Bank {
     constructor() {
      this.balance = 0;
+     this.statement = ["date || credit || debit || balance"]
+
     }
     
      add(number) {
@@ -11,6 +13,7 @@ class Bank {
      withdraw(number){
          this.balance = this.balance - number;
          return this.balance;
-
       }
+
+
 }
