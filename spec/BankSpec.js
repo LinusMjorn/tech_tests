@@ -33,11 +33,11 @@ describe("Bank", function() {
         expect( bank.statement[1] ).toContain(" 500.00 ")
     }); 
 
-    // it("adds times when deposit was made to deposit string", function() {
-    //     bank = new Bank 
-    //     bank.withdraw(500)
-    //     expect( bank.statement ).toContain("|| || 500.00 || 500.00")
-    // }); 
+    it("adds times when deposit was made to deposit string", function() {
+        bank = new Bank 
+        bank.withdraw(500)
+        expect( bank.statement[1] ).toContain("2020")
+    }); 
 
     // it("adds pipes and current balance to statement array to make the final output match criteria ", function() {
     //     bank = new Bank 
