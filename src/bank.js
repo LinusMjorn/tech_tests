@@ -7,7 +7,8 @@ class Bank {
     
      deposit(number) {
          this.balance = this.balance + number;
-         this.statement.push("£" + number.toString());
+
+         this.statement.push(number.toFixed(2).toString());
         return this.balance;
       }
 

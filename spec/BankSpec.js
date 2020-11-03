@@ -25,7 +25,7 @@ describe("Bank", function() {
     it("adds the deposit amount as a string to the statement array", function() {
         bank = new Bank 
         bank.deposit(1000)
-        expect( bank.statement ).toContain("£1000")
+        expect( bank.statement ).toContain("1000.00")
 
     }); 
 
