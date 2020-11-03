@@ -39,11 +39,11 @@ describe("Bank", function() {
         expect( bank.statement[1] ).toContain("2020")
     }); 
 
-    // it("adds pipes and current balance to statement array to make the final output match criteria ", function() {
-    //     bank = new Bank 
-    //     bank.withdraw(1000)
-    //     expect( bank.statement ).toContain("1000.00")
-    // }); 
+    it("adds pipes and current balance to statement array to make the final output match criteria ", function() {
+        bank = new Bank 
+        bank.withdraw(1000)
+        expect( bank.statement[1] ).toContain("||")
+    }); 
 
 
     
