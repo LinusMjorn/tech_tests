@@ -2,6 +2,7 @@ class Bank {
     constructor() {
      this.balance = 0;
      this.statement = ["date || credit || debit || balance"]
+     this.fullStatement = []
 
     }
 
@@ -34,6 +35,15 @@ class Bank {
         var withdrawFull = formattedDate + " || " + withdrawAmount + " || || " + this.balance.toFixed(2);
         this.statement.push(withdrawFull);
        return this.balance
+      }
+
+      printStatement(statement = this.statement){
+          for (var i = 0; i < statement.length; i ++){
+              console.log(statement[i]);
+              this.fullStatement.push(statement[i])
+
+          }
+
       }
 
 

@@ -45,6 +45,14 @@ describe("Bank", function() {
         expect( bank.statement[1] ).toContain("||")
     }); 
 
+    it("prints the entire statement following a deposit and withdraw ", function() {
+        bank = new Bank 
+        bank.deposit(2000)
+        bank.withdraw(1000)
+        bank.printStatement()
+        expect(bank.fullStatement).toEqual ([ 'date || credit || debit || balance', '03/11/2020 || || 2000.00 || 2000.00', '03/11/2020 || 1000.00 || || 1000.00' ])
+    }); 
+
 
     
 
