@@ -5,9 +5,9 @@ class Bank {
 
     }
     
-     add(number) {
+     deposit(number) {
          this.balance = this.balance + number;
-         this.statement.push(number)
+         this.statement.push("£" + number.toString());
         return this.balance;
       }
 

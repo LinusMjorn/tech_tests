@@ -4,9 +4,9 @@ describe("Bank", function() {
         expect( bank.balance ).toEqual(0);
     }); 
 
-    it("Returns the balance when 1000 has been added to balance", function() {
+    it("Returns the balance when 1000 has been deposited to balance", function() {
         bank = new Bank 
-        bank.add(1000)
+        bank.deposit(1000)
         expect( bank.balance ).toEqual(1000);
     }); 
 
@@ -22,12 +22,15 @@ describe("Bank", function() {
 
     }); 
 
-    it("Adds the an add transaction to statement when add is called", function() {
+    it("adds the deposit amount as a string to the statement array", function() {
         bank = new Bank 
-        bank.add(1000)
-        expect( bank.statement ).toContain(1000)
+        bank.deposit(1000)
+        expect( bank.statement ).toContain("£1000")
 
     }); 
+
+
+    
 
 
 });
