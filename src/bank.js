@@ -10,7 +10,6 @@ class Bank {
         let month = String(date.getMonth() + 1);
         let day = String(date.getDate());
         const year = String(date.getFullYear());
-      
         if (month.length < 2) month = '0' + month;
         if (day.length < 2) day = '0' + day;
       
@@ -18,8 +17,12 @@ class Bank {
         }
 
      deposit(number,date = new Date()) {
-         this.balance = this.balance + number;
+         if (typeof date == "object") {
          var formattedDate = this.formatDate(date)
+         }else{
+             formattedDate = date
+         }
+         this.balance = this.balance + number;
          date.toString();
          var depositAmount = number.toFixed(2).toString();
          var depositFull = formattedDate + " || || " + depositAmount + " || " + this.balance.toFixed(2);
@@ -28,8 +31,12 @@ class Bank {
       }
 
       withdraw(number,date = new Date()) {
+        if (typeof date == "object") {
+            var formattedDate = this.formatDate(date)
+            }else{
+                formattedDate = date
+            }
         this.balance = this.balance - number;
-        var formattedDate = this.formatDate(date)
         date.toString();
         var withdrawAmount = number.toFixed(2).toString();
         var withdrawFull = formattedDate + " || " + withdrawAmount + " || || " + this.balance.toFixed(2);

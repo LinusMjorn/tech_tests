@@ -47,10 +47,10 @@ describe("Bank", function() {
 
     it("prints the entire statement following a deposit and withdraw ", function() {
         bank = new Bank 
-        bank.deposit(2000)
-        bank.withdraw(1000)
+        bank.deposit(2000,"12/12/2012")
+        bank.withdraw(1000, '12/12/2012')
         bank.printStatement()
-        expect(bank.fullStatement).toEqual ([ 'date || credit || debit || balance', '03/11/2020 || || 2000.00 || 2000.00', '03/11/2020 || 1000.00 || || 1000.00' ])
+        expect(bank.fullStatement).toEqual (["date || credit || debit || balance", "12/12/2012 || || 2000.00 || 2000.00", "12/12/2012 || 1000.00 || || 1000.00"])
     }); 
 
 
