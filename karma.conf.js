@@ -3,15 +3,15 @@ module.exports = function (config) {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
-            'src/app/**/*.js',
-            'src/spec/**/*.specs.js'
+            'src/bank.js',
+            'spec/BankSpec.js'
         ],
         preprocessors: {
-            '**/src/app/*.js': ['coverage']
+            'src/bank.js': ['coverage']
         },
         plugins: [
             'karma-jasmine',
-            'karma-phantomjs-launcher',
+            'karma-chrome-launcher',
             'karma-coverage'
         ],
         reporters: ['progress', 'coverage'],
@@ -19,7 +19,7 @@ module.exports = function (config) {
         colors: true,
         logLevel: config.LOG_DEBUG,
         autowatch: true,
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         singleRun: false,
         concurrency: Infinity,
         coverageReporter: {
