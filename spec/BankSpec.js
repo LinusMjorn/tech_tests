@@ -80,6 +80,19 @@ describe("Bank", function() {
         expect( bank.validDate).toEqual(true)
     }); 
 
+    it("makes sure the validate date method return false when the 32nd is entered as a date", function() {
+        bank = new Bank 
+        bank.validateDate("32/02/2019")
+        expect( bank.validDate).toEqual(false)
+    }); 
+
+    it("makes sure the validate date method return false when gibberish is entered", function() {
+        bank = new Bank 
+        bank.validateDate("gibberish")
+        expect( bank.validDate).toEqual(false)
+    }); 
+
+
     it("does not add transaction to the statement when wrong date format is added", function() {
         bank = new Bank 
         bank.deposit(2000,"12/12/2012")
@@ -88,6 +101,8 @@ describe("Bank", function() {
         expect(bank.fullStatement).toEqual (["date || credit || debit || balance", "12/12/2012 || || 2000.00 || 2000.00"])
     }); 
 
+
+    
 
     
 
